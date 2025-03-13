@@ -3,7 +3,7 @@ class Schedule < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
   validates_with ScheduleValidator
-  validates :all_day, presence: true
+  validates :all_day, inclusion: {in: [true, false]}
   validates :memo, length: { maximum: 200 }
 
 end

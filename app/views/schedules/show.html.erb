@@ -1,2 +1,35 @@
-<h1>Schedules#show</h1>
-<p>Find me in app/views/schedules/show.html.erb</p>
+<div>
+  <div>
+    <div>
+      <%= link_to "一覧に戻る", schedules_path %>
+    </div>
+    <div>
+      <h3><%= @schedule.title %></h3>
+      <%= link_to "編集", edit_schedule_path(@schedule.id) %>
+    </div>
+    <div>
+      <table class="table">
+        <tr>
+          <th>開始日</th>
+          <td><%= @schedule.start_date %></td>
+        </tr>
+        <tr>
+          <th>終了日</th>
+          <td><%= @schedule.end_date %></td>
+        </tr>
+        <tr>
+          <th>終日</th>
+          <% if @schedule.all_day %>
+            <td>○</td>
+          <% else %>
+            <td></td>
+          <% end %>
+        </tr>
+        <tr>
+          <th>スケジュールメモ</th>
+          <td><%= @schedule.memo %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
