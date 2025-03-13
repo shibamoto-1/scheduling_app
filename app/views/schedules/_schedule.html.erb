@@ -3,7 +3,14 @@
   <td><%= schedule.title %></td>
   <td><%= schedule.start_date %></td>
   <td><%= schedule.end_date %></td>
-  <td><%= schedule.all_day %></td>
+
+  <% if schedule.all_day %>
+    <td>○</td>
+  <% else %>
+    <td></td>
+  <% end %>
+
+  <td><%= schedule.updated_at %></td>
   <td>
     <%= link_to "詳細", schedule_path(schedule.id) %>
   </td>
