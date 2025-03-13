@@ -1,7 +1,7 @@
 <div class="p-5">
   <div>
-    <div class="d-flex justify-content-between">
-      <p>予定一覧</p>
+    <div class="d-flex justify-content-between align-items-center">
+      <p class="fs-3 fw-bold">予定一覧</p>
       <%= link_to "新規作成", new_schedule_path, class: "btn btn-primary"%>
     </div>
   </div>
@@ -30,8 +30,8 @@
 
   <footer class="card">
     <div class="card-footer d-flex justify-content-between">
-      <p class="text-muted"><%= "予定合計#{@schedules.count}" %></p>
-      <p>本日の日付</p>
+      <p class="text-muted"><%= "予定合計 #{@schedules.count}" %></p>
+      <p>本日の日付 : <%= l Time.zone.today %></p>
     </div>
   </footer>
 </div>

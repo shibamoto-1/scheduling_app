@@ -30,7 +30,7 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
     if @schedule.update(schedule_params)
       flash[:info] = "更新しました！"
-      redirect_to edit_schedule_path(@schedule.id)
+      redirect_to schedule_path(@schedule.id)
     else
       flash.now[:danger] = "更新できませんでした"
       render :edit

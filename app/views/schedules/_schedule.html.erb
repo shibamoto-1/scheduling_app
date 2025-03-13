@@ -1,8 +1,8 @@
 <tr>
   <td><%= schedule.id %></td>
   <td><%= schedule.title %></td>
-  <td><%= schedule.start_date %></td>
-  <td><%= schedule.end_date %></td>
+  <td><%= l schedule.start_date %></td>
+  <td><%= l schedule.end_date %></td>
 
   <% if schedule.all_day %>
     <td>○</td>
@@ -10,7 +10,7 @@
     <td></td>
   <% end %>
 
-  <td><%= schedule.updated_at %></td>
+  <td><%= l schedule.updated_at, format: :long %></td>
   <td>
     <%= link_to "詳細", schedule_path(schedule.id) %>
   </td>
@@ -18,6 +18,6 @@
     <%= link_to "編集", edit_schedule_path(schedule.id) %>
   </td>
   <td>
-    <%= button_to "削除", schedule_path(schedule.id), method: :delete %>
+    <%= link_to "削除", schedule_path(schedule.id), method: :delete, data: {confirm: "予定を削除しますか？"} %>
   </td>
 </tr>
