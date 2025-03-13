@@ -1,4 +1,7 @@
 <div class="p-5">
+
+  <%= render "shared/error_messages", obj: @schedule %>
+  
   <p>新規作成</p>
   <div class="border p-5">
     <%= form_with model: @schedule, class: "row g-2" do |f| %>

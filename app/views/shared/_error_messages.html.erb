@@ -1,5 +1,7 @@
-<% flash.each do |key, value| %>
-    <p class="alert alert-<%= key %>">
-      <%= value %>
-    </p>
+<% if obj.errors.any? %>
+  <div class="alert alert-<%= flash[:value] %>">
+  <% obj.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </div>
 <% end %>
