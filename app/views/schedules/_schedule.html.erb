@@ -1,0 +1,16 @@
+<tr>
+  <td><%= schedule.id %></td>
+  <td><%= schedule.title %></td>
+  <td><%= schedule.start_date %></td>
+  <td><%= schedule.end_date %></td>
+  <td><%= schedule.all_day %></td>
+  <td>
+    <%= link_to "詳細", schedule_path(schedule.id) %>
+  </td>
+  <td>
+    <%= link_to "編集", edit_schedule_path(schedule.id) %>
+  </td>
+  <td>
+    <%= button_to "削除", schedule_path(schedule.id), method: :delete %>
+  </td>
+</tr>

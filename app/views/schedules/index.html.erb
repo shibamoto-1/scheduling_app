@@ -1,2 +1,26 @@
-<h1>スケジュール一覧</h1>
-<button type="button" class="btn btn-primary">Primary</button>
+<div class="p-5">
+  <div>
+    <div class="d-flex justify-content-between">
+      <p>予定一覧</p>
+      <%= link_to "新規作成", new_schedule_path, class: "btn btn-primary"%>
+    </div>
+  </div>
+
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>タイトル</th>
+          <th>開始日時</th>
+          <th>終了日時</th>
+          <th>終日</th>
+          <th>更新日時</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @schedules %>
+      </tbody>
+    </table>
+  </div>
+</div>
