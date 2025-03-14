@@ -1,0 +1,35 @@
+<div class="w-50 mx-auto">
+  <div class="pt-5">
+    <%= link_to "一覧に戻る", schedules_path %>
+  </div>
+  <div>
+    <div class="py-5 d-flex justify-content-between">
+      <h3><%= @schedule.title %></h3>
+      <%= link_to "編集", edit_schedule_path(@schedule.id), class: "btn btn-primary" %>
+    </div>
+    <div class="card p-3">
+      <table class="table">
+        <tr>
+          <th>開始日</th>
+          <td><%= l @schedule.start_date %></td>
+        </tr>
+        <tr>
+          <th>終了日</th>
+          <td><%= l @schedule.end_date %></td>
+        </tr>
+        <tr>
+          <th>終日</th>
+          <% if @schedule.all_day %>
+            <td>○</td>
+          <% else %>
+            <td></td>
+          <% end %>
+        </tr>
+        <tr>
+          <th>スケジュールメモ</th>
+          <td><%= @schedule.memo %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<%= render "shared/delete_modal", schedule: schedule%>
+
+<tr>
+  <td><%= schedule.id %></td>
+  <td><%= schedule.title %></td>
+  <td><%= l schedule.start_date %></td>
+  <td><%= l schedule.end_date %></td>
+
+  <% if schedule.all_day %>
+    <td>○</td>
+  <% else %>
+    <td></td>
+  <% end %>
+
+  <td><%= l schedule.updated_at, format: :long %></td>
+  <td>
+    <%= link_to "詳細", schedule_path(schedule.id) %>
+  </td>
+  <td>
+    <%= link_to "編集", edit_schedule_path(schedule.id) %>
+  </td>
+  <td>
+    <%= link_to "削除", "#", data: { bs_toggle: "modal", bs_target: "#deleteModal", schedule_id: schedule.id } %>
+  </td>
+</tr>

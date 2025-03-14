@@ -2,15 +2,26 @@
 <html>
   <head>
     <title>SchedulingApp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reroad' %>
+
   </head>
 
-  <body>
+  <body>  
+    <header class="navbar bg-body-tertiary">
+      <div class="container-fluid justify-content-center">
+        <h3 class="fw-semibold">スケジュール管理アプリ</h3>
+      </div>
+    </header>
+
+    <%= render "shared/flash_messages" %>
+
     <%= yield %>
   </body>
 </html>
